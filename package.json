@@ -4,6 +4,8 @@
   "description": "Population Genetics statistics in JavaScript",
   "main": "lib/index.js",
   "scripts": {
+    "coveralls": "istanbul cover ./node_modules/mocha/bin/_mocha --report lcovonly -- tests/* -R spec && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage",
+    "lint": "eslint . --ext js",
     "test": "mocha tests/*"
   },
   "repository": {
@@ -27,11 +29,13 @@
   "homepage": "https://github.com/tiagoantao/metis-stats#readme",
   "dependencies": {
     "chai": "^4.1.2",
-    "coveralls": "^3.0.0",
-    "eslint": "^4.18.1",
     "sanctuary": "^0.14.1"
   },
   "devDependencies": {
-    "mocha": "^5.0.1"
+    "coveralls": "^3.0.0",
+    "eslint": "^4.18.1",
+    "istanbul": "^0.4.5",
+    "mocha": "^5.0.1",
+    "mocha-lcov-reporter": "^1.3.0"
   }
 }
